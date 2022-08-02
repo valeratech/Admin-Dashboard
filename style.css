@@ -22,6 +22,7 @@ html {
 
 body {
     margin: 0;
+    font-family: arial;
 
 }
 
@@ -357,19 +358,29 @@ template {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-areas:
         "sidebar header"
         "sidebar main-content"
 }
 
 #header {
-    background-color: #adffb6;
+    background-color: white;
     grid-area: header;
+    position: relative;
+    box-shadow: 0 10px 10px -6px gray;
+    padding: 40px;
+
 }
 
 #sidebar {
+    position: relative;
+    display: grid;
+    gap: 20px;
     grid-area: sidebar;
     background-color: deepskyblue;
+    align-content: start;
+    box-shadow: 4px 0 10px -5px gray;
 }
 
 #main-content {
@@ -377,13 +388,22 @@ template {
     grid-area: main-content;
     display: grid;
     grid-gap: 50px;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     padding: 50px;
+
 }
 
 .tiles {
     background-color: white;
     padding: 30px;
+    border-radius: 10px;
+
+}
+
+.project-tiles {
+    border-left: solid;
+    border-width: 10px;
+    border-color: #f0f02d;
 }
 
 .projects {
@@ -402,3 +422,20 @@ template {
     grid-template-columns: 2fr 1fr;
 }
 
+.profile-list,.settings-list > li {
+    list-style: none;
+}
+
+.profile-list > li {
+    margin-bottom: 10px;
+}
+
+.settings-list > li {
+    margin-bottom: 10px;
+ }
+
+#sidebar a {
+    text-decoration: none;
+    font-size: 1.563rem;
+    color: #fbfbfb;
+}
